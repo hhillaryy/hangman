@@ -1,16 +1,26 @@
-var wordArray = function(word) {
-  var emptyArray = [];
-  for(var index = 0; index < word.length; index ++) {
-    emptyArray.push(word.slice(index, index + 1));
-  }
-return emptyArray;
-}
+// var wordArray = function(word) {
+//   var emptyArray = [];
+//   for(var index = 0; index < word.length; index ++) {
+//     emptyArray.push(word.slice(index, index + 1));
+//   }
+// return emptyArray;
+// }
 
-function hangmanWord (word, length, letters) {
+function hangmanWord (word) {
   this.word = word;
   this.length = word.length;
-  this.letters = wordArray(word);
+  this.letters = word.split("");
 }
+
+// function wordBank (bankArray, randomSelect) {
+//   this.bankArray = bankArray;
+//   this.randomSelect = bankArray.Math.random(index);
+// }
+hangmanWord.prototype.randomSelect = function () {
+  var wordBank = ["hello", "apple", "candy", "apart", "diver", "store"];
+  this.word = wordBank[Math.floor(Math.random()* wordBank.length)];
+};
+
 
 //
 // hangmanWord.prototype.userLetter = function() {
