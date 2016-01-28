@@ -1,11 +1,4 @@
-// describe("wordArray", function (){
-//   it("will make a word into an array", function(){
-//     var testArray = new wordArray("hello");
-//     expect(testArray).to.eql(["h", "e", "l", "l", "o"]);
-//   });
-// });
-
-describe("hangmanWord", function(){
+describe("hangmanWord", function() {
   it("will create object with these specifications", function(){
     var testWord = new hangmanWord ("hello");
     expect(testWord.word).to.equal("hello");
@@ -14,14 +7,27 @@ describe("hangmanWord", function(){
   });
 });
 
-describe ("game,", function (){
-  var test game = new Game
+describe ("game", function () {
+  it("will create game with given properties", function() {
+    var testGame = new Game(randomWord, letterBank);
+    var randomWord = testGame.randomSelect();
+    var testWord = new hangmanWord(randomWord);
+    var letterBank = ["A", "B", "C", "D", "E", "F", "G", "H",]
+    expect(testGame.letterBank).to.equal("")
+  });
 
+  it("will return true if letter is  in the word", function () {
+    var testGame = new Game("a", "apple");
+    expect(testGame.letterSelect).to.equal("true");
+  });
 });
 
-var testGame = new Game();
-var randomWord = testGame.randomSelect();
-var testWord = new hangmanWord(randomWord);
+// describe("wordArray", function (){
+//   it("will make a word into an array", function(){
+//     var testArray = new wordArray("hello");
+//     expect(testArray).to.eql(["h", "e", "l", "l", "o"]);
+//   });
+// });
 
 // describe("wordBank", function() {
 //   it("it will store words for game to select", function(){
